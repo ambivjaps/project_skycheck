@@ -75,14 +75,16 @@
             <!-- Weather Search -->
             <div class="sc-weather-search my-5">
                 <h3 class="fw-semibold text-center"> Search for a city: </h5>
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center mt-3">
                     <div class="input-group mb-3 w-75">
                         <input type="text" class="form-control" id="city-input" placeholder="Type city name here.." aria-label="Type city name here.." aria-describedby="#">
                         <button class="btn btn-warning" type="button" id="#" onclick="getWeather()"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
+                <p class="text-center"><i>Remember: Kindly double-check for spelling errors to avoid issues.</i></p>
             </div>
 
+            <!-- Display Weather Output -->
             <div class="sc-weather-output">
                 <div id="sc-weather-info"></div>
             </div>
@@ -97,14 +99,14 @@
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12" style="margin-top: 40px;">
-                        <a href="index.html" target="_blank"><img class="img-fluid mx-auto d-block mb-3" src="assets/img/logo/#" alt="SkyCheck" title="SkyCheck" width="300"></a>
+                        <a href="index.html" target="_blank"><img class="img-fluid mx-auto d-block mb-3" src="assets/img/logo/skycheck_logo.png" alt="SkyCheck" title="SkyCheck" width="300"></a>
                     </div>
                     <div class="col-xl-2 col-lg-6 col-md-6 col-12" style="margin-top: 10px;">
-                        <a href="#" target="_blank"><img class="img-fluid mx-auto d-block mb-4" src="assets/img/logo/tide_logo.png" alt="TIDE" title="TIDE" width="120"></a>
+                        <a href="#" target="_blank"><img class="img-fluid mx-auto d-block mb-4" src="assets/img/logo/tide_logo_clear.png" alt="TIDE" title="TIDE" width="120"></a>
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-12" style="border-left: 1px solid #909090;">
                         <h4 class="text-light fw-bold" style="font-size: 13px;">ABOUT SKYCHECK</h4>
-                        <p> Integrating the OpenWeather API, SkyCheck retrieves relevant weather information (such as a city's current weather conditions and their 5-day forecast) based on user input. Through our web application, <i> you can access the weather at a glance! </i> </p>
+                        <p> Integrating the <a href="https://openweathermap.org/api" class="link-light">OpenWeather API</a>, SkyCheck retrieves relevant weather information (such as a city's current weather conditions and their 5-day forecast) based on user input. Through our web application, <i> you can access the weather at a glance! </i> </p>
                     </div>
                 </div>
             </div>

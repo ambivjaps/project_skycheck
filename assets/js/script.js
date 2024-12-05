@@ -90,7 +90,7 @@ async function getWeather() {
                         <div class="col-lg-8 col-md-6 col-12">
                             <h2 class="fw-bold"><i class="fas fa-map-marker-alt"></i>&nbsp; ${cityName}, ${country}</h2><hr>
                             <h6><span class="badge rounded-pill text-bg-light px-3"> OVERVIEW</span></h6>
-                            <h6><i class="fas fa-cloud fa-fw"></i>&nbsp; Weather: ${weatherDesc}</h6>
+                            <h6><i class="fas fa-cloud fa-fw"></i>&nbsp; Weather: <span class="text-uppercase">${weatherDesc}</span></h6>
                             <h6><i class="fas fa-wind fa-fw"></i>&nbsp; Wind Speed: ${windSpeed}</h6>
                             <h6><i class="fas fa-humidity fa-fw"></i>&nbsp; Humidity: ${humidity}</h6>
                             <hr><h6><span class="badge rounded-pill text-bg-light px-3"> TEMPERATURE</span></h6>
@@ -107,6 +107,6 @@ async function getWeather() {
 
     } catch (error) {
         console.error('Error fetching weather data:', error);
-        document.getElementById('sc-weather-info').innerHTML = '<div class="alert alert-danger" role="alert"> Error fetching weather data. Please try again! </div>';
+        document.getElementById('sc-weather-info').innerHTML = '<div class="forecast-city mt-2 mb-3 h-100 shadow-sm"> <p> Error fetching weather data. Please try again! </p> </div>';
     }
 }
