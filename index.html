@@ -22,14 +22,27 @@
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     </head>
 
-    <body>
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SkyCheck</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+            </div>
+            </div>
+        </div>
+    </nav>
 
+    <body>
         <div class="container-fluid px-lg-5 p-3 min-vh-100">
             <!-- Weather Search -->
             <div class="sc-weather-search my-5">
-                <h3 class="fw-bold text-center"> Search for a city: </h5>
+                <h3 class="fw-bold text-center"> Welcome! Search for a city: </h5>
                 <div class="d-flex justify-content-center">
-                    <div class="input-group mb-3 w-50">
+                    <div class="input-group mb-3 w-75">
                         <input type="text" class="form-control" id="city-input" placeholder="Type city name here.." aria-label="Type city name here.." aria-describedby="#">
                         <button class="btn btn-dark" type="button" id="#" onclick="getWeather()"><i class="fas fa-search"></i></button>
                     </div>
@@ -52,8 +65,8 @@
                         <a href="#" target="_blank"><img class="img-fluid mx-auto d-block mb-4" src="assets/img/logo/tide_logo.png" alt="TIDE" title="TIDE" width="120"></a>
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 col-12" style="border-left: 1px solid #505050;">
-                        <h5 class="text-light fw-bold" style="font-size: 13px;">ABOUT SKYCHECK</h5>
-                        <p> Lorem ipsum dolor sit amet.. </p>
+                        <h4 class="text-light fw-bold" style="font-size: 13px;">ABOUT SKYCHECK</h4>
+                        <p> Integrating the OpenWeather API, SkyCheck retrieves relevant weather information (such as a city's current weather conditions and their 5-day forecast) based on user input. Through our web application, <i> you can access the weather at a glance! </i> </p>
                     </div>
                 </div>
             </div>

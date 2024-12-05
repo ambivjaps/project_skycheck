@@ -83,13 +83,13 @@ async function getWeather() {
                             <img class="rounded-circle shadow mx-auto d-block my-5 w-50" src="${iconUrl}" alt="Weather Icon" width="100%" />
                         </div>
                         <div class="col-lg-8 col-md-6 col-12">
-                            <h2 class="fw-bold">${cityName}, ${country}</h2><hr>
+                            <h2 class="fw-bold"><i class="fas fa-map-marker-alt"></i>&nbsp; ${cityName}, ${country}</h2><hr>
                             <h6><span class="badge rounded-pill text-bg-dark px-3"> OVERVIEW</span></h6>
-                            <h6>Weather: ${weatherDesc}</h6>
-                            <h6>Wind Speed: ${windSpeed}</h6>
-                            <h6>Humidity: ${humidity}</h6>
+                            <h6><i class="fas fa-cloud"></i> &nbsp; Weather: ${weatherDesc}</h6>
+                            <h6><i class="fas fa-wind"></i>&nbsp; Wind Speed: ${windSpeed}</h6>
+                            <h6><i class="fas fa-humidity"></i>&nbsp; Humidity: ${humidity}</h6>
                             <hr><h6><span class="badge rounded-pill text-bg-dark px-3"> TEMPERATURE</span></h6>
-                            <h6>In Celsius: ${tempCelsius}°C, In Fahrenheit: ${tempFahrenheit}°F</h6>
+                            <h6><i class="fas fa-thermometer-quarter"></i>&nbsp; In Celsius: ${tempCelsius}°C, In Fahrenheit: ${tempFahrenheit}°F</h6>
                         </div>
                     </div>
                 </div>
