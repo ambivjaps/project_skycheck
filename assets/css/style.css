@@ -40,6 +40,11 @@ body {
 	color: #F5BB00 !important;
 }
 
+.custom-toggler.navbar-toggler {
+    background-color: #283b58;
+	border-radius: 20px;
+}
+          
 .custom-toggler .navbar-toggler-icon {
     background-image: url(
 	"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(245, 187, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
@@ -126,16 +131,16 @@ body {
 	margin-left: 10px;
 }
 
-.forecast-day .badge {
-    display: block; /* Make the badge span the entire container */
-    width: 100%; /* Set the width of the badge to 100% */
-    text-align: center; /* Center the text inside the badge */
-    box-sizing: border-box; /* Include padding in width calculation */
+.forecast-day .badge-desc {
+    display: block; 
+    width: 100%; 
+    text-align: center; 
+    box-sizing: border-box;
 }
 
 .forecast-day {
-    max-width: 100%; /* Ensure the forecast-day container is responsive */
-    text-align: center; /* Optional: Center all child elements */
+    max-width: 100%; 
+    text-align: center; 
 }
 
 /* Footer */

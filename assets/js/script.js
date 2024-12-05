@@ -56,12 +56,12 @@ async function getWeather() {
                                     </div>
                                     <div class="sc-container-content p-4">
                                         <img class="rounded-circle shadow mx-auto d-block mb-3 bg-secondary" src="${iconUrlForecast}" alt="Weather Icon" />
-                                        <h6 class="text-center"><span class="badge rounded-pill text-bg-warning px-3 text-uppercase"> ${forecastDesc} </span></h6>
+                                        <h6 class="text-center"><span class="badge badge-desc rounded-pill text-bg-warning px-3 text-uppercase text-truncate"> ${forecastDesc} </span></h6>
                                         <hr>
                                         <h5 class="fw-bold"><i class="fas fa-calendar-day"></i>&nbsp; ${day}</h5>
                                         <h6>${formattedDate}</h6>
 
-                                        <div class="sc-temp-content rounded-2 p-2 mt-3">
+                                        <div class="sc-temp-content rounded-2 py-1 mt-3">
                                             <h6><span class="badge rounded-pill text-bg-light px-3"> TEMPERATURE</span></h6>
                                             <h6><i class="far fa-temperature-high fa-fw"></i> Hi: ${highTemp}°C </h6>
                                             <h6><i class="far fa-temperature-low fa-fw"></i> Low: ${lowTemp}°C</h6>
@@ -101,7 +101,7 @@ async function getWeather() {
 
             </div>
 
-            <h2 class="fw-semibold text-center"> 5-Day Forecast for ${cityName}: </h2>
+            <h2 class="fw-semibold text-center mt-4"> 5-Day Forecast for ${cityName}: </h2>
             ${forecastHtml}
         `;
 
