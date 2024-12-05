@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 body {
-	font-family: 'Montserrat', sans-serif !important;
+	font-family: 'Rubik', sans-serif !important;
 	color: #FFFFFF !important;
 	margin: 0;
 	padding: 0;
@@ -13,6 +13,97 @@ body {
     background-size: 50px 50px; /* Size of grid squares */
 }
 
+/* Navigation Bar */
+
+.navbar {
+	background-color: #2c4f85 !important;
+	z-index: 1000 !important;
+}
+
+.sc-main-nav .nav-link {
+	font-size: 14px !important;
+	color: #FFFFFF !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.5px;
+	padding: 6px;
+}
+
+.sc-main-nav .nav-link.active, .sc-main-nav .nav-link.active:hover {
+	background-color: #F5BB00 !important;
+	color: #000000 !important;
+	border-radius: 20px;
+	font-weight: 600 !important;
+    border-bottom: 4px solid #000000;
+}
+
+.sc-main-nav .nav-link:hover {
+	color: #F5BB00 !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url(
+	"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(245, 187, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+.sc-header {
+	background-color: #303030;
+}
+
+/* Profile Header */
+
+.header-avatar {
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
+}
+
+.header-avatar-inside {
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+}
+
+.dropdown-menu {
+	width: 300px;
+	font-size: 11px;
+}
+
+.header-user .dropdown-menu:before {
+	right: 15px;
+	top: -16px;
+	border: 8px solid #0000;
+	border-bottom: 8px;
+}
+  
+.header-user .dropdown-menu:after {
+	right: 22px;
+	top: -14px;
+	border: 7px solid #0000;
+	border-bottom: 8px solid #FFFFFF;
+}
+	
+.header-user .dropdown-menu:before, .header-user .dropdown-menu:after {
+	content: "";
+	left: auto;
+	display: inline-block;
+	position: absolute;
+}
+
+.header-user .dropdown-menu {
+	border-radius: 20px !important;
+}
+
+.sc-btn-red {
+	background-color: #880000 !important;
+	color: #FFFFFF !important;
+}
+
+.sc-btn-red:hover {
+	background-color: #a50000 !important;
+}
+
+/* Content */
+
 .sc-container-heading {
 	background-color: #2c4f85;
 	color: #ffffff;
@@ -23,6 +114,10 @@ body {
 .sc-container-content {
     background-color: #283b58;
     border-radius: 0 0 10px 10px;
+}
+
+.sc-temp-content {
+    background-color: #3a4e6d;
 }
 
 .sc-container-heading h6 {
@@ -72,4 +167,25 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgb(255, 227, 100);
     border-radius: 5px;
+}
+
+/* Back To Top */
+.sc-btn-up {
+	background-color: #f5bb00 !important;
+	color: #000000 !important;
+	z-index: 5;
+
+	position: fixed;
+	opacity: 0.9;
+
+	border-radius: 50%;
+	width: 2em;
+	height: 2em;
+	
+	right: 40px;
+	bottom: 40px;
+}
+
+.sc-btn-up:hover {
+	background-color: #ffcd28 !important;
 }

@@ -36,6 +36,8 @@ async function getWeather() {
             const day = date.toLocaleDateString('en-US', { weekday: 'long' });
             const formattedDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
+            const forecastDesc = forecast.weather[0].description;
+
             const highTemp = forecast.main.temp_max;
             const lowTemp = forecast.main.temp_min;
             const iconUrlForecast = `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`;
@@ -44,25 +46,28 @@ async function getWeather() {
                 if (i !== 0) {
                     forecastHtml += '</div>'; /* Closes the previous row */
                 }
-                forecastHtml += '<div class="row justify-content-center mb-5">'; /* Opens a new row */
+                forecastHtml += '<div class="row g-2 justify-content-center mb-5">'; /* Opens a new row */
             }
 
-            forecastHtml += `<div class="col-xl-2 col-lg-6 col-md-6 col-12 my-3">
-                                <div class="forecast-day mt-2 mb-3 bg-body-tertiary rounded-4 h-100 shadow-sm">
+            forecastHtml += `<div class="col-xl-2 col-lg-4 col-md-6 col-12 my-3">
+                                <div class="forecast-day mt-2 mb-3 h-100 shadow-sm">
                                     <div class="sc-container-heading">
-                                        <span class="badge rounded-pill text-bg-warning px-4"><h5 class="fw-bold">DAY ${i + 1}</h5></span>
+                                        <h5 class="fw-bold">DAY ${i + 1}</h5>
                                     </div>
                                     <div class="sc-container-content p-4">
+                                        <img class="rounded-circle shadow mx-auto d-block mb-3 bg-secondary" src="${iconUrlForecast}" alt="Weather Icon" />
+                                        <h6 class="text-center"><span class="badge rounded-pill text-bg-warning px-3 text-uppercase"> ${forecastDesc} </span></h6>
+                                        <hr>
                                         <h5 class="fw-bold"><i class="fas fa-calendar-day"></i>&nbsp; ${day}</h5>
                                         <h6>${formattedDate}</h6>
-                                        <img class="rounded-circle shadow mx-auto d-block my-3" src="${iconUrlForecast}" alt="Weather Icon" />
-                                        <h5 class="text-center"><span class="badge rounded-pill text-bg-dark px-3"> RAINY </span></h5><hr>
-                                        <div class="sc-temp-content">
-                                            <h6><span class="badge rounded-pill text-bg-dark px-3"> TEMPERATURE</span></h6>
+
+                                        <div class="sc-temp-content rounded-2 p-2 mt-3">
+                                            <h6><span class="badge rounded-pill text-bg-light px-3"> TEMPERATURE</span></h6>
                                             <h6><i class="far fa-temperature-high"></i> Hi: ${highTemp}°C </h6>
                                             <h6><i class="far fa-temperature-low"></i> Low: ${lowTemp}°C</h6>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
             `;
@@ -73,22 +78,22 @@ async function getWeather() {
         
         /* Display data */
         document.getElementById('sc-weather-info').innerHTML = `
-            <div class="forecast-city mt-2 mb-3 bg-body-tertiary rounded-4 h-100 shadow-sm">
+            <div class="forecast-city mt-2 mb-3 h-100 shadow-sm">
                 <div class="sc-container-heading">
                     <h6 class="fw-bold">Weather details for "${cityName}"</h6>
                 </div>
                 <div class="sc-container-content p-5">
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-12">
-                            <img class="rounded-circle shadow mx-auto d-block my-5 w-50" src="${iconUrl}" alt="Weather Icon" width="100%" />
+                            <img class="rounded-circle shadow mx-auto d-block my-5 w-50 bg-secondary" src="${iconUrl}" alt="Weather Icon" width="100%" />
                         </div>
                         <div class="col-lg-8 col-md-6 col-12">
                             <h2 class="fw-bold"><i class="fas fa-map-marker-alt"></i>&nbsp; ${cityName}, ${country}</h2><hr>
-                            <h6><span class="badge rounded-pill text-bg-dark px-3"> OVERVIEW</span></h6>
-                            <h6><i class="fas fa-cloud"></i> &nbsp; Weather: ${weatherDesc}</h6>
+                            <h6><span class="badge rounded-pill text-bg-light px-3"> OVERVIEW</span></h6>
+                            <h6><i class="fas fa-cloud"></i>&nbsp; Weather: ${weatherDesc}</h6>
                             <h6><i class="fas fa-wind"></i>&nbsp; Wind Speed: ${windSpeed}</h6>
                             <h6><i class="fas fa-humidity"></i>&nbsp; Humidity: ${humidity}</h6>
-                            <hr><h6><span class="badge rounded-pill text-bg-dark px-3"> TEMPERATURE</span></h6>
+                            <hr><h6><span class="badge rounded-pill text-bg-light px-3"> TEMPERATURE</span></h6>
                             <h6><i class="fas fa-thermometer-quarter"></i>&nbsp; In Celsius: ${tempCelsius}°C, In Fahrenheit: ${tempFahrenheit}°F</h6>
                         </div>
                     </div>
@@ -96,7 +101,7 @@ async function getWeather() {
 
             </div>
 
-            <h2 class="fw-bold text-center"> 5-Day Forecast for ${cityName}: </h2>
+            <h2 class="fw-semibold text-center"> 5-Day Forecast for ${cityName}: </h2>
             ${forecastHtml}
         `;
 

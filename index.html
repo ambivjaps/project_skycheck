@@ -22,29 +22,60 @@
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     </head>
 
-    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary shadow-sm">
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm sc-main-nav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">SkyCheck</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler custom-toggler mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" aria-current="page" href="#">Home</a>
+
+            <a class="navbar-brand" href="#">SkyCheck</a>
+
+             <!-- User Dropdown -->
+             <div class="header-user dropdown order-lg-1 me-1">
+                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    <img src="assets/img/defaults/default_avatar.jpg" class="header-avatar rounded-circle">
+                </a>
+                <div class="dropdown-menu dropdown-menu-end text-small shadow">
+                    <div class="container">
+                        <!-- User Profile Info -->
+                        <div class="justify-content-center text-center my-2 mb-3">
+                            <img src="assets/img/defaults/default_avatar.jpg" class="header-avatar-inside rounded-circle shadow mb-3">
+                            <h6 class="current-name fw-bold"> JUAN DELA CRUZ </h6>
+                        </div>
+                        <!-- Logout Button -->
+                        <a class="btn btn-sm sc-btn-red fw-bold w-100 rounded-pill mt-1 mb-2" href="index.html" type="button"> <i class="fas fa-sign-out-alt"></i> Logout </a>
+                    </div>
+                </div>
             </div>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <!-- Navigation Items -->
+                <ul class="navbar-nav me-auto mx-auto flex-row flex-wrap text-center my-2">
+                    <li class="nav-item col-12 col-md-12 col-lg-auto me-1">
+                        <a class="nav-link" aria-current="page" href="index.html"><i class="fas fa-tachometer-alt fa-lg fa-fw"></i>&nbsp; DASHBOARD</a>
+                    </li>
+                    <li class="nav-item col-12 col-md-12 col-lg-auto me-1">
+                        <a class="nav-link" aria-current="page" href="#"><i class="fas fa-info-circle fa-lg fa-fw"></i>&nbsp; ABOUT</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Header -->
+    <div class="sc-header shadow-sm py-2 px-5">
+        <h6> Welcome back, <b> JUAN DELA CRUZ! </b> Today is.</h6>
+    </div>
 
     <body>
         <div class="container-fluid px-lg-5 p-3 min-vh-100">
             <!-- Weather Search -->
             <div class="sc-weather-search my-5">
-                <h3 class="fw-bold text-center"> Welcome! Search for a city: </h5>
+                <h3 class="fw-semibold text-center"> Welcome! Search for a city: </h5>
                 <div class="d-flex justify-content-center">
                     <div class="input-group mb-3 w-75">
                         <input type="text" class="form-control" id="city-input" placeholder="Type city name here.." aria-label="Type city name here.." aria-describedby="#">
-                        <button class="btn btn-dark" type="button" id="#" onclick="getWeather()"><i class="fas fa-search"></i></button>
+                        <button class="btn btn-warning" type="button" id="#" onclick="getWeather()"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </div>
@@ -53,6 +84,10 @@
                 <div id="sc-weather-info"></div>
             </div>
         </div>
+
+        <button class="btn btn-lg sc-btn-up rounded-pill fs-1 shadow-lg" id="back-to-top" type="button" title="Back To Top" style="display: none;">
+            <i class="fas fa-arrow-alt-up"></i>
+        </button>
 
         <!-- Start of Footer -->
         <footer class="sc-footer-main mt-auto">
