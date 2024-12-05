@@ -44,20 +44,24 @@ async function getWeather() {
                 if (i !== 0) {
                     forecastHtml += '</div>'; /* Closes the previous row */
                 }
-                forecastHtml += '<div class="row">'; /* Opens a new row */
+                forecastHtml += '<div class="row justify-content-center">'; /* Opens a new row */
             }
 
-            forecastHtml += `<div class="col-md-2">
-                                <div class="forecast-day mt-2 mb-4 bg-body-tertiary rounded-4 h-100 shadow-sm">
+            forecastHtml += `<div class="col-xl-2 col-lg-6 col-md-6 col-12 my-3">
+                                <div class="forecast-day mt-2 mb-3 bg-body-tertiary rounded-4 h-100 shadow-sm">
                                     <div class="sc-container-heading">
                                         <h6 class="fw-bold">Day#${i + 1}</h6>
                                     </div>
                                     <div class="sc-container-content p-4">
-                                        <h5 class="fw-bold">${day}</h5>
+                                        <h5 class="fw-bold"><i class="fas fa-calendar-day"></i>&nbsp; ${day}</h5>
                                         <h6>${formattedDate}</h6>
-                                        <img class="rounded-circle shadow-sm" src="${iconUrlForecast}" alt="Weather Icon" />
-                                        <p>Hi: ${highTemp}°C </p>
-                                        <p>Low: ${lowTemp}°C</p>
+                                        <img class="rounded-circle shadow-sm mx-auto d-block my-3" src="${iconUrlForecast}" alt="Weather Icon" />
+                                        <h5 class="text-center"><span class="badge rounded-pill text-bg-dark px-3"> RAINY </span></h5><hr>
+                                        <div class="sc-temp-content">
+                                            <h6><span class="badge rounded-pill text-bg-dark px-3"> TEMPERATURE</span></h6>
+                                            <h6><i class="far fa-temperature-high"></i> Hi: ${highTemp}°C </h6>
+                                            <h6><i class="far fa-temperature-low"></i> Low: ${lowTemp}°C</h6>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +81,7 @@ async function getWeather() {
             <h5>Humidity: ${humidity}</h5>
             <img src="${iconUrl}" alt="Weather Icon" />
             <hr>
-            <h4> 5-Day Forecast: </h4>
+            <h2 class="fw-bold text-center"> 5-Day Forecast: </h2>
             ${forecastHtml}
         `;
 
