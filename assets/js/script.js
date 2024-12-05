@@ -50,7 +50,7 @@ async function getWeather() {
             forecastHtml += `<div class="col-xl-2 col-lg-6 col-md-6 col-12 my-3">
                                 <div class="forecast-day mt-2 mb-3 bg-body-tertiary rounded-4 h-100 shadow-sm">
                                     <div class="sc-container-heading">
-                                        <h6 class="fw-bold">Day#${i + 1}</h6>
+                                        <span class="badge rounded-pill text-bg-warning px-4"><h5 class="fw-bold">DAY ${i + 1}</h5></span>
                                     </div>
                                     <div class="sc-container-content p-4">
                                         <h5 class="fw-bold"><i class="fas fa-calendar-day"></i>&nbsp; ${day}</h5>
