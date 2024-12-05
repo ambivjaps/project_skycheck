@@ -48,11 +48,17 @@ async function getWeather() {
             }
 
             forecastHtml += `<div class="col-md-2">
-                                <div class="forecast-day">
-                                    <h5>${day}</h5>
-                                    <h5>${formattedDate}</h5>
-                                    <img src="${iconUrlForecast}" alt="Weather Icon" />
-                                    <p>Hi: ${highTemp}°C, Low: ${lowTemp}°C</p>
+                                <div class="forecast-day mt-2 mb-4 bg-body-tertiary rounded-4 h-100 shadow-sm">
+                                    <div class="sc-container-heading">
+                                        <h6 class="fw-bold">Day#${i + 1}</h6>
+                                    </div>
+                                    <div class="sc-container-content p-4">
+                                        <h5 class="fw-bold">${day}</h5>
+                                        <h6>${formattedDate}</h6>
+                                        <img class="rounded-circle shadow-sm" src="${iconUrlForecast}" alt="Weather Icon" />
+                                        <p>Hi: ${highTemp}°C </p>
+                                        <p>Low: ${lowTemp}°C</p>
+                                    </div>
                                 </div>
                             </div>
             `;

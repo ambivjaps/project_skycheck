@@ -8,6 +8,19 @@ body {
 	background-color: #eeeeee !important;
 }
 
+.sc-container-heading {
+	background-color: #181a2b;
+	color: #ffffff;
+	padding: 12px;
+	border-radius: 10px 10px 0 0;
+}
+
+.sc-container-heading h6 {
+	font-size: 15px;
+	margin-bottom: 1px;
+	margin-left: 10px;
+}
+
 /* Footer */
 .sc-footer-main {
 	background-color: #202129;
