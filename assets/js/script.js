@@ -55,7 +55,7 @@ async function getWeather() {
                                     <div class="sc-container-content p-4">
                                         <h5 class="fw-bold"><i class="fas fa-calendar-day"></i>&nbsp; ${day}</h5>
                                         <h6>${formattedDate}</h6>
-                                        <img class="rounded-circle shadow-sm mx-auto d-block my-3" src="${iconUrlForecast}" alt="Weather Icon" />
+                                        <img class="rounded-circle shadow mx-auto d-block my-3" src="${iconUrlForecast}" alt="Weather Icon" />
                                         <h5 class="text-center"><span class="badge rounded-pill text-bg-dark px-3"> RAINY </span></h5><hr>
                                         <div class="sc-temp-content">
                                             <h6><span class="badge rounded-pill text-bg-dark px-3"> TEMPERATURE</span></h6>
@@ -73,15 +73,30 @@ async function getWeather() {
         
         /* Display data */
         document.getElementById('sc-weather-info').innerHTML = `
-            <h3>${cityName}, ${country}</h3>
-            <h4>Temperature:</h4>
-            <h5>In Celsius: ${tempCelsius}°C, In Fahrenheit: ${tempFahrenheit}°F</h5>
-            <h5>Weather: ${weatherDesc}</h5>
-            <h5>Wind Speed: ${windSpeed}</h5>
-            <h5>Humidity: ${humidity}</h5>
-            <img src="${iconUrl}" alt="Weather Icon" />
-            <hr>
-            <h2 class="fw-bold text-center"> 5-Day Forecast: </h2>
+            <div class="forecast-city mt-2 mb-3 bg-body-tertiary rounded-4 h-100 shadow-sm">
+                <div class="sc-container-heading">
+                    <h6 class="fw-bold">Weather details for "${cityName}"</h6>
+                </div>
+                <div class="sc-container-content p-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img class="rounded-circle shadow" src="${iconUrl}" alt="Weather Icon" />
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="fw-bold">${cityName}, ${country}</h3><hr>
+                            <h6><span class="badge rounded-pill text-bg-dark px-3"> OVERVIEW</span></h6>
+                            <h6>Weather: ${weatherDesc}</h6>
+                            <h6>Wind Speed: ${windSpeed}</h6>
+                            <h6>Humidity: ${humidity}</h6>
+                            <hr><h6><span class="badge rounded-pill text-bg-dark px-3"> TEMPERATURE</span></h6>
+                            <h6>In Celsius: ${tempCelsius}°C, In Fahrenheit: ${tempFahrenheit}°F</h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr><h2 class="fw-bold text-center"> 5-Day Forecast: </h2>
             ${forecastHtml}
         `;
 
