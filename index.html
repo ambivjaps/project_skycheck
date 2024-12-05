@@ -81,7 +81,7 @@
                 <h3 class="fw-semibold text-center"> Search for a city: </h5>
                 <div class="d-flex justify-content-center mt-3">
                     <div class="input-group mb-3 w-75">
-                        <input type="text" class="form-control" id="city-input" placeholder="Type city name here.." aria-label="Type city name here.." aria-describedby="#">
+                        <input type="text" class="form-control" id="city-input" placeholder="Type city name here.." aria-label="Type city name here.." required>
                         <button class="btn btn-warning" type="button" id="#" onclick="getWeather()"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
@@ -94,12 +94,32 @@
             </div>
         </div>
 
-        <div class="container w-25 text-center"><hr>
+        <div class="container w-75"><hr>
             <div id="search-history">
-                <h3>YOUR SEARCH HISTORY:</h3>
+                <h3 class="fw-semibold text-center">Your Search History:</h3>
                 <ul class="list-group sc-list-group my-3" id="search-history-list"></ul>
             </div>
         </div>
+
+        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <div class="sc-modal-circle-symbol mt-2">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="sc-notice text-center mt-3">
+                        <h3 class="fw-bold">Oops..</h3>
+                        <p class="sc-notice-desc my-4">Error fetching weather data. Ensure correct spelling before submission. Please try again!</p>
+
+                        <div class="d-flex justify-content-center action-btn py-3">
+                            <button class="btn btn-dark fw-bold px-3 mx-1" type="submit" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <button class="btn btn-lg sc-btn-up rounded-pill fs-1 shadow-lg" id="back-to-top" type="button" title="Back To Top" style="display: none;">
             <i class="fas fa-arrow-alt-up"></i>

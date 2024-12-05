@@ -8,7 +8,7 @@ function displaySearchHistory() {
 
     for (const city of searchHistory) {
       const listItem = document.createElement('li');
-      listItem.classList.add('list-group-item'); // Add the class here
+      listItem.classList.add('list-group-item');
       listItem.textContent = city;
       searchHistoryList.appendChild(listItem);
     }
@@ -124,12 +124,8 @@ async function getWeather() {
 
     } catch (error) {
         console.error('Error fetching weather data:', error);
-        document.getElementById('sc-weather-info').innerHTML = `<div class="forecast-city mt-2 mb-3 h-100 shadow-sm">
-                                                                    <div class="sc-container-heading">
-                                                                        <h6 class="fw-bold">Oh, no..</h6>
-                                                                    </div>
-                                                                    <div class="sc-container-content p-5"> <h4> Error fetching weather data. Please try again! </h4> 
-                                                                </div>`;
+        const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+        errorModal.show();
     }
     displaySearchHistory();
 }
