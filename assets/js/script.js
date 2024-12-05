@@ -44,7 +44,7 @@ async function getWeather() {
                 if (i !== 0) {
                     forecastHtml += '</div>'; /* Closes the previous row */
                 }
-                forecastHtml += '<div class="row justify-content-center">'; /* Opens a new row */
+                forecastHtml += '<div class="row justify-content-center mb-5">'; /* Opens a new row */
             }
 
             forecastHtml += `<div class="col-xl-2 col-lg-6 col-md-6 col-12 my-3">
@@ -77,13 +77,13 @@ async function getWeather() {
                 <div class="sc-container-heading">
                     <h6 class="fw-bold">Weather details for "${cityName}"</h6>
                 </div>
-                <div class="sc-container-content p-4">
+                <div class="sc-container-content p-5">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img class="rounded-circle shadow" src="${iconUrl}" alt="Weather Icon" />
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <img class="rounded-circle shadow mx-auto d-block my-5 w-50" src="${iconUrl}" alt="Weather Icon" width="100%" />
                         </div>
-                        <div class="col-md-6">
-                            <h3 class="fw-bold">${cityName}, ${country}</h3><hr>
+                        <div class="col-lg-8 col-md-6 col-12">
+                            <h2 class="fw-bold">${cityName}, ${country}</h2><hr>
                             <h6><span class="badge rounded-pill text-bg-dark px-3"> OVERVIEW</span></h6>
                             <h6>Weather: ${weatherDesc}</h6>
                             <h6>Wind Speed: ${windSpeed}</h6>
@@ -96,7 +96,7 @@ async function getWeather() {
 
             </div>
 
-            <hr><h2 class="fw-bold text-center"> 5-Day Forecast: </h2>
+            <h2 class="fw-bold text-center"> 5-Day Forecast for ${cityName}: </h2>
             ${forecastHtml}
         `;
 
