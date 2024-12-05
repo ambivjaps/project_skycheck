@@ -143,6 +143,12 @@ body {
     text-align: center; 
 }
 
+.sc-list-group {
+	min-height: 200px;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
 /* Footer */
 .sc-footer-main {
 	background-color: #2c4f85;
