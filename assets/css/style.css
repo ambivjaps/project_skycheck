@@ -126,6 +126,18 @@ body {
 	margin-left: 10px;
 }
 
+.forecast-day .badge {
+    display: block; /* Make the badge span the entire container */
+    width: 100%; /* Set the width of the badge to 100% */
+    text-align: center; /* Center the text inside the badge */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.forecast-day {
+    max-width: 100%; /* Ensure the forecast-day container is responsive */
+    text-align: center; /* Optional: Center all child elements */
+}
+
 /* Footer */
 .sc-footer-main {
 	background-color: #2c4f85;

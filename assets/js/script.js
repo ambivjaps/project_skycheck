@@ -52,7 +52,7 @@ async function getWeather() {
             forecastHtml += `<div class="col-xl-2 col-lg-4 col-md-6 col-12 my-3">
                                 <div class="forecast-day mt-2 mb-3 h-100 shadow-sm">
                                     <div class="sc-container-heading">
-                                        <h5 class="fw-bold">DAY ${i + 1}</h5>
+                                        <h4 class="fw-bold">DAY ${i + 1}</h4>
                                     </div>
                                     <div class="sc-container-content p-4">
                                         <img class="rounded-circle shadow mx-auto d-block mb-3 bg-secondary" src="${iconUrlForecast}" alt="Weather Icon" />
@@ -63,8 +63,8 @@ async function getWeather() {
 
                                         <div class="sc-temp-content rounded-2 p-2 mt-3">
                                             <h6><span class="badge rounded-pill text-bg-light px-3"> TEMPERATURE</span></h6>
-                                            <h6><i class="far fa-temperature-high"></i> Hi: ${highTemp}°C </h6>
-                                            <h6><i class="far fa-temperature-low"></i> Low: ${lowTemp}°C</h6>
+                                            <h6><i class="far fa-temperature-high fa-fw"></i> Hi: ${highTemp}°C </h6>
+                                            <h6><i class="far fa-temperature-low fa-fw"></i> Low: ${lowTemp}°C</h6>
                                         </div>
                                     </div>
 
@@ -90,11 +90,11 @@ async function getWeather() {
                         <div class="col-lg-8 col-md-6 col-12">
                             <h2 class="fw-bold"><i class="fas fa-map-marker-alt"></i>&nbsp; ${cityName}, ${country}</h2><hr>
                             <h6><span class="badge rounded-pill text-bg-light px-3"> OVERVIEW</span></h6>
-                            <h6><i class="fas fa-cloud"></i>&nbsp; Weather: ${weatherDesc}</h6>
-                            <h6><i class="fas fa-wind"></i>&nbsp; Wind Speed: ${windSpeed}</h6>
-                            <h6><i class="fas fa-humidity"></i>&nbsp; Humidity: ${humidity}</h6>
+                            <h6><i class="fas fa-cloud fa-fw"></i>&nbsp; Weather: ${weatherDesc}</h6>
+                            <h6><i class="fas fa-wind fa-fw"></i>&nbsp; Wind Speed: ${windSpeed}</h6>
+                            <h6><i class="fas fa-humidity fa-fw"></i>&nbsp; Humidity: ${humidity}</h6>
                             <hr><h6><span class="badge rounded-pill text-bg-light px-3"> TEMPERATURE</span></h6>
-                            <h6><i class="fas fa-thermometer-quarter"></i>&nbsp; In Celsius: ${tempCelsius}°C, In Fahrenheit: ${tempFahrenheit}°F</h6>
+                            <h6><i class="fas fa-thermometer-quarter fa-fw"></i>&nbsp; In Celsius: ${tempCelsius}°C, In Fahrenheit: ${tempFahrenheit}°F</h6>
                         </div>
                     </div>
                 </div>
