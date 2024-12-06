@@ -48,7 +48,7 @@ async function getWeather() {
         const country = weatherData.sys.country;
         
         const tempCelsius = weatherData.main.temp;
-        const tempFahrenheit = (tempCelsius * 9/5) + 32;
+        const tempFahrenheit = ((tempCelsius * 9/5) + 32).toFixed(2);
         
         const weatherDesc = weatherData.weather[0].description;
         const iconUrl = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
