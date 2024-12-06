@@ -148,10 +148,6 @@ body {
     text-align: center; 
 }
 
-.sc-btn-up:hover {
-	background-color: #ffcd28 !important;
-}
-
 /* Modal */
 
 .modal-content {
@@ -246,6 +242,10 @@ body {
 	
 	right: 40px;
 	bottom: 40px;
+}
+
+.sc-btn-up:hover {
+	background-color: #ffd64e !important;
 }
 
 #search-history span {
