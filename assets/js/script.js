@@ -88,7 +88,7 @@ async function getWeather() {
                 forecastHtml += '<div class="row g-2 justify-content-center mb-5">'; /* Opens a new row */
             }
 
-            forecastHtml += `<div class="col-xl-4 col-md-6 col-12">
+            forecastHtml += `<div class="col-xl-4 col-md-6 col-6">
                                 <div class="forecast-day mt-2 mb-3 h-100 shadow-sm">
                                     <div class="sc-container-heading">
                                         <h4 class="fw-bold">DAY ${i + 1}</h4>
