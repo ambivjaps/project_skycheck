@@ -11,15 +11,21 @@ function displaySearchHistory() {
 
     const heading = document.createElement('h4');
     heading.classList.add('fw-semibold');
-    heading.textContent = 'Your Search History:';
+    heading.textContent = 'Your Previous Searches:';
     searchHistoryList.appendChild(heading);
 
     for (const city of searchHistory) {
         const citySpan = document.createElement('span');
-        citySpan.classList.add('badge', 'rounded-pill', 'text-bg-light', 'px-2', 'me-2');
+        citySpan.classList.add('badge', 'rounded-pill', 'text-bg-light', 'px-2', 'me-2'); 
         citySpan.textContent = city;
+      
+        citySpan.addEventListener('click', () => {
+          document.getElementById('city-input').value = city;
+          getWeather(); 
+        });
+      
         searchHistoryList.appendChild(citySpan);
-    }
+      }
 }
   
 async function getWeather() {
@@ -31,11 +37,6 @@ async function getWeather() {
     if (city.trim() === '') {
         alert('Please enter a city.');
         return;
-    }
-      
-    /* For Search history */
-    if (!searchHistory.includes(city)) {
-        searchHistory.push(city);
     }
 
     try {
@@ -61,6 +62,12 @@ async function getWeather() {
 
         let forecastHtml = '';
 
+        /* For Search history */
+        if (!searchHistory.includes(city)) {
+            searchHistory.push(city);
+            displaySearchHistory();
+        }
+
         for (let i = 0; i < 5; i++) {
             const forecast = forecastData.list[i * 8]; 
             const date = new Date(forecast.dt * 1000); 
@@ -81,7 +88,7 @@ async function getWeather() {
                 forecastHtml += '<div class="row g-2 justify-content-center mb-5">'; /* Opens a new row */
             }
 
-            forecastHtml += `<div class="col-xl-4 col-md-6 col-12 my-3">
+            forecastHtml += `<div class="col-xl-4 col-md-6 col-12">
                                 <div class="forecast-day mt-2 mb-3 h-100 shadow-sm">
                                     <div class="sc-container-heading">
                                         <h4 class="fw-bold">DAY ${i + 1}</h4>
@@ -126,7 +133,8 @@ async function getWeather() {
                             <h6><i class="fas fa-wind fa-fw"></i>&nbsp; Wind Speed: ${windSpeed}</h6>
                             <h6><i class="fas fa-humidity fa-fw"></i>&nbsp; Humidity: ${humidity}</h6>
                             <hr><h6><span class="badge rounded-pill text-bg-light px-3"> TEMPERATURE</span></h6>
-                            <h6><i class="fas fa-thermometer-quarter fa-fw"></i>&nbsp; In Celsius: ${tempCelsius}°C, In Fahrenheit: ${tempFahrenheit}°F</h6>
+                            <h6><i class="fas fa-thermometer-quarter fa-fw"></i>&nbsp; In Celsius: ${tempCelsius}°C
+                            <h6><i class="fas fa-thermometer-quarter fa-fw"></i>&nbsp; In Fahrenheit: ${tempFahrenheit}°F</h6>
                         </div>
                     </div>
                 </div>
@@ -142,7 +150,6 @@ async function getWeather() {
         const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
         errorModal.show();
     }
-    displaySearchHistory();
 }
 
 
