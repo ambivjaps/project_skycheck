@@ -114,6 +114,9 @@ async function getWeather() {
 
         /* Closes the last row */
         forecastHtml += '</div>';
+
+        const weatherInfoDiv = document.getElementById('sc-weather-info');
+        weatherInfoDiv.classList.add('fade-in'); 
         
         /* Display data */
         document.getElementById('sc-weather-info').innerHTML = `
@@ -144,6 +147,8 @@ async function getWeather() {
             <h2 class="fw-semibold text-center mt-4"> 5-Day Forecast for ${cityName}: </h2>
             ${forecastHtml}
         `;
+
+        setTimeout(() => weatherInfoDiv.classList.remove('fade-in'), 1000);
 
     } catch (error) {
         console.error('Error fetching weather data:', error);

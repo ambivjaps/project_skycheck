@@ -143,10 +143,8 @@ body {
     text-align: center; 
 }
 
-.sc-list-group {
-	min-height: 200px;
-	max-height: 200px;
-	overflow-y: auto;
+.sc-btn-up:hover {
+	background-color: #ffcd28 !important;
 }
 
 /* Modal */
@@ -245,10 +243,22 @@ body {
 	bottom: 40px;
 }
 
-.sc-btn-up:hover {
-	background-color: #ffcd28 !important;
-}
-
 #search-history span {
 	cursor: pointer;
 }
+
+/* Transition */
+.fade-in {
+	opacity: 0;
+	animation: fadeIn 1s ease-in-out;
+	animation-fill-mode: forwards;
+  }
+  
+  @keyframes fadeIn {
+	from {
+	  opacity: 0;
+	}
+	to {
+	  opacity: 1;
+	}
+  }
