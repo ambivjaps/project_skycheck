@@ -6,11 +6,19 @@ function displaySearchHistory() {
     const searchHistoryList = document.getElementById('search-history-list');
     searchHistoryList.innerHTML = ''; /* Clears previous list */
 
+    const hr = document.createElement('hr');
+    searchHistoryList.appendChild(hr);
+
+    const heading = document.createElement('h4');
+    heading.classList.add('fw-semibold');
+    heading.textContent = 'Your Search History:';
+    searchHistoryList.appendChild(heading);
+
     for (const city of searchHistory) {
-      const listItem = document.createElement('li');
-      listItem.classList.add('list-group-item');
-      listItem.textContent = city;
-      searchHistoryList.appendChild(listItem);
+        const citySpan = document.createElement('span');
+        citySpan.classList.add('badge', 'rounded-pill', 'text-bg-light', 'px-2', 'me-2');
+        citySpan.textContent = city;
+        searchHistoryList.appendChild(citySpan);
     }
 }
   
@@ -19,6 +27,13 @@ async function getWeather() {
     const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
     const forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&cnt=40`;
 
+    /* If user submits empty input */
+    if (city.trim() === '') {
+        alert('Please enter a city.');
+        return;
+    }
+      
+    /* For Search history */
     if (!searchHistory.includes(city)) {
         searchHistory.push(city);
     }
@@ -66,7 +81,7 @@ async function getWeather() {
                 forecastHtml += '<div class="row g-2 justify-content-center mb-5">'; /* Opens a new row */
             }
 
-            forecastHtml += `<div class="col-xl-2 col-lg-4 col-md-6 col-12 my-3">
+            forecastHtml += `<div class="col-xl-4 col-md-6 col-12 my-3">
                                 <div class="forecast-day mt-2 mb-3 h-100 shadow-sm">
                                     <div class="sc-container-heading">
                                         <h4 class="fw-bold">DAY ${i + 1}</h4>
@@ -97,7 +112,7 @@ async function getWeather() {
         document.getElementById('sc-weather-info').innerHTML = `
             <div class="forecast-city mt-2 mb-3 h-100 shadow-sm">
                 <div class="sc-container-heading">
-                    <h6 class="fw-bold">Weather details for "${cityName}"</h6>
+                    <h6 class="fw-bold">Weather details for "${cityName}":</h6>
                 </div>
                 <div class="sc-container-content p-5">
                     <div class="row">

@@ -76,28 +76,37 @@
     <body class="d-flex flex-column min-vh-100">
         <div class="loader"></div>
         <div class="container-fluid px-lg-5 p-3">
-            <!-- Weather Search -->
-            <div class="sc-weather-search" style="margin-top: 100px;">
-                <h3 class="fw-semibold text-center"> Search for a city: </h5>
-                <div class="d-flex justify-content-center mt-3">
-                    <div class="input-group mb-3 w-75">
-                        <input type="text" class="form-control" id="city-input" placeholder="Type city name here.." aria-label="Type city name here.." required>
-                        <button class="btn btn-warning" type="button" id="#" onclick="getWeather()"><i class="fas fa-search"></i></button>
+            <div class="row">
+                <div class="col-xl-4">
+                    <div class="sticky-top" style="top: 10rem;">
+
+                        <!-- Weather Search -->
+                        <div class="forecast-city mt-2 mb-3 h-100 shadow-sm">
+                            <div class="sc-container-heading">
+                                <h6 class="fw-bold">Search for a city:</h6>
+                            </div>
+                            <div class="sc-container-content p-4">
+                                <div class="d-flex justify-content-center">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" id="city-input" placeholder="Type a city here.." aria-label="Type a city here.." required>
+                                        <button class="btn btn-warning" type="button" id="#" onclick="getWeather()"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <small><i>Remember: Kindly double-check spelling to avoid issues.</i></small>
+
+                                <div id="search-history">
+                                    <div id="search-history-list"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p class="text-center"><i>Remember: Kindly double-check for spelling errors to avoid issues.</i></p>
-            </div>
-
-            <!-- Display Weather Output -->
-            <div class="sc-weather-output">
-                <div id="sc-weather-info"></div>
-            </div>
-        </div>
-
-        <div class="container w-75"><hr>
-            <div id="search-history">
-                <h3 class="fw-semibold text-center">Your Search History:</h3>
-                <ul class="list-group sc-list-group my-3" id="search-history-list"></ul>
+                <div class="col-xl-8">
+                    <!-- Display Weather Output -->
+                    <div class="sc-weather-output mt-4">
+                        <div id="sc-weather-info"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
