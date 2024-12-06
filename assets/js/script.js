@@ -2,6 +2,12 @@
 const apiKey = 'd41008436125765f1e2f7f7837718053'; 
 const searchHistory = [];
 
+document.getElementById('city-input').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        getWeather();
+    }
+});
+
 function displaySearchHistory() {
     const searchHistoryList = document.getElementById('search-history-list');
     searchHistoryList.innerHTML = ''; /* Clears previous list */
@@ -47,7 +53,7 @@ async function getWeather() {
         const cityName = weatherData.name;
         const country = weatherData.sys.country;
         
-        const tempCelsius = weatherData.main.temp;
+        const tempCelsius = (weatherData.main.temp  - 273.15).toFixed(2);
         const tempFahrenheit = ((tempCelsius * 9/5) + 32).toFixed(2);
         
         const weatherDesc = weatherData.weather[0].description;
