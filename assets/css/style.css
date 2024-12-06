@@ -28,12 +28,17 @@ body {
 	padding: 6px;
 }
 
-.sc-main-nav .nav-link.active, .sc-main-nav .nav-link.active:hover {
+.sc-main-nav .nav-link.active {
 	background-color: #F5BB00 !important;
 	color: #000000 !important;
 	border-radius: 20px;
 	font-weight: 600 !important;
     border-bottom: 4px solid #000000;
+}
+
+.sc-main-nav .nav-link.active:hover {
+	background-color: #ffd64e !important;
+	color: #000000 !important;
 }
 
 .sc-main-nav .nav-link:hover {
